@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var moment = require('moment');
+var PORT = process.env.PORT || 8080;
 
 app.get('/:timestamp', (req,res) => {
 	var time = moment(req.params.timestamp, 'MMMM DD, YYYY', true);
@@ -23,6 +24,6 @@ app.get('/:timestamp', (req,res) => {
   
 });
 
-app.listen(8080, () => {
-	console.log("Listening on : 8080");
+app.listen(PORT, () => {
+	console.log("Listening on : " + PORT);
 })
